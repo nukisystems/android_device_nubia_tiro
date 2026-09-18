@@ -1,4 +1,4 @@
-From b4ffdb9a208fe84a17d0bc2d76007eef3adae3dd Mon Sep 17 00:00:00 2001
+From 27b63a883efdb4d60666a8fa4edb8c82bc318f30 Mon Sep 17 00:00:00 2001
 From: Giovanni Ricca <giovanniricca@proton.me>
 Date: Tue, 9 Sep 2025 22:38:17 +0200
 Subject: [PATCH 1/2] CameraUtil: Stub out `setScreenFps`
@@ -19,18 +19,18 @@ E AndroidRuntime:        at cn.nubia.camera.normal.NormalMemberFragment.onPause(
  1 file changed, 2 insertions(+)
 
 diff --git a/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali b/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali
-index 555368dd..6868ca41 100644
+index e170de81..f34a211e 100644
 --- a/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali
 +++ b/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali
-@@ -7817,6 +7817,8 @@
+@@ -8157,6 +8157,8 @@
  .method public static setScreenFps(Z)V
-     .locals 8
+     .locals 7
  
 +    return-void
 +
-     .line 2023
+     .line 2095
      invoke-static {}, Lcn/nubia/camera/nubiacameraconfig/Config;->getIntance()Lcn/nubia/camera/nubiacameraconfig/Config;
  
 -- 
-2.51.0
+2.55.0
 

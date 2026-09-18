@@ -1,44 +1,45 @@
-From c0b6840632948f48c5988d56329d7c50b424b3b8 Mon Sep 17 00:00:00 2001
-From: Cosmin Tanislav <demonsingur@gmail.com>
-Date: Mon, 23 Jun 2025 20:49:47 +0300
+From 66a95d68433c38379b92494171d0cfe100be3efb Mon Sep 17 00:00:00 2001
+From: Giovanni Ricca <giovanniricca@proton.me>
+Date: Fri, 18 Sep 2026 18:50:35 +0200
 Subject: [PATCH 2/2] NubiaCamera: implement opening generic gallery app
 
 https://gist.github.com/Demon000/d1a194ba9f07190908b1591e8c91b69f
 ---
  .../ThumbnailOnClickListener.smali            |   4 +-
- .../cn/nubia/camera/utils/CameraUtil.smali    | 456 ++++++++++++++++++
- 2 files changed, 459 insertions(+), 1 deletion(-)
+ .../cn/nubia/camera/utils/CameraUtil.smali    | 457 ++++++++++++++++++
+ 2 files changed, 460 insertions(+), 1 deletion(-)
 
 diff --git a/smali/cn/nubia/camera/commonlisteners/ThumbnailOnClickListener.smali b/smali/cn/nubia/camera/commonlisteners/ThumbnailOnClickListener.smali
-index 247c4c0a..ffd7df53 100644
+index b072568b..9c35e637 100644
 --- a/smali/cn/nubia/camera/commonlisteners/ThumbnailOnClickListener.smali
 +++ b/smali/cn/nubia/camera/commonlisteners/ThumbnailOnClickListener.smali
-@@ -288,6 +288,8 @@
+@@ -268,6 +268,8 @@
  
      move-result v2
  
 +    const/4 v2, 0x1
 +
-     if-eqz v2, :cond_9
+     if-eqz v2, :cond_8
  
      .line 68
-@@ -318,7 +320,7 @@
-     move-result-wide v13
+@@ -298,7 +300,7 @@
+     move-result-wide v10
  
      .line 68
--    invoke-static/range {v8 .. v14}, Lcn/nubia/camera/utils/CameraUtil;->viewUriInPhotos(Landroid/net/Uri;Landroid/content/Context;ZJJ)V
-+    invoke-static/range {v8 .. v14}, Lcn/nubia/camera/utils/CameraUtil;->viewUriInGallery(Landroid/net/Uri;Landroid/content/Context;ZJJ)V
+-    invoke-static/range {v5 .. v11}, Lcn/nubia/camera/utils/CameraUtil;->viewUriInPhotos(Landroid/net/Uri;Landroid/content/Context;ZJJ)V
++    invoke-static/range {v5 .. v11}, Lcn/nubia/camera/utils/CameraUtil;->viewUriInGallery(Landroid/net/Uri;Landroid/content/Context;ZJJ)V
  
-     goto :goto_2
+     goto :goto_1
  
 diff --git a/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali b/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali
-index 6868ca41..9a32c96c 100644
+index f34a211e..d5378d1b 100644
 --- a/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali
 +++ b/smali_classes2/cn/nubia/camera/utils/CameraUtil.smali
-@@ -9369,3 +9369,459 @@
+@@ -9940,3 +9940,460 @@
      :goto_1
      return-void
  .end method
++
 +
 +.method public static addClipData(Landroid/content/Intent;Landroid/content/Context;JJ)V
 +    .registers 14
@@ -496,5 +497,5 @@ index 6868ca41..9a32c96c 100644
 +    return-void
 +.end method
 -- 
-2.51.0
+2.55.0
 

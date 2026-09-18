@@ -13,7 +13,7 @@ TARGET_KERNEL_CONFIG += \
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Security patch
-BOOT_SECURITY_PATCH := 2025-12-01
+BOOT_SECURITY_PATCH := 2026-06-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 include vendor/nubia/tiro/BoardConfigVendor.mk
